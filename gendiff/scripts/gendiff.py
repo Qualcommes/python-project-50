@@ -1,4 +1,5 @@
 import argparse
+import json
 
 
 def main():
@@ -13,8 +14,13 @@ def main():
 
     args = parser.parse_args()
     
+    # обработка
     print(f"Comparing {args.first_file} and {args.second_file}...")
-    
+    with open(args.first_file, encoding='utf-8') as file:
+        file1 = json.load(file)
+    with open(args.second_file, encoding='utf-8') as file:
+        file2 = json.load(file)
+        
 
 if __name__ == "__main__":
     main()
