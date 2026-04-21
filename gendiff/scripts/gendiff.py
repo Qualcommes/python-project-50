@@ -12,9 +12,9 @@ def generate_diff(file_path1: str, file_path2: str) -> str:
     difference = set1 - set2
     intersection = set1 & set2
     plus = set2 - set1
-    all = sorted(set1 | set2)
+    all_keys = sorted(set1 | set2)
     result = '{\n'
-    for key in all:
+    for key in all_keys:
         if key in difference:
             result += '  - ' + key + ': ' + str(file1[key]).lower() + '\n'
             continue
