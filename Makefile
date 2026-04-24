@@ -11,5 +11,7 @@ package-reinstall:
 	uv tool install --force dist/*.whl
 
 lint:
-	uv run ruff check gendiff
+	uv run ruff check .
 
+test:
+	uv run pytest -v
