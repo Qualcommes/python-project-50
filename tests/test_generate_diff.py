@@ -23,6 +23,7 @@ def test_reverse_generate_diff():
         result = result.read()
     assert generate_diff(file2, file1) == result
 
+
 def test_alternate_generate_diff():
     test_dir = os.path.dirname(__file__)
     result_file = os.path.join(os.path.dirname(__file__), 'test_data', 
