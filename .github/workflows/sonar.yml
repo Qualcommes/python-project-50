@@ -46,7 +46,7 @@ jobs:
         with:
           args: >
             -Dsonar.sonarcloud=true
-            -Dsonar.organization=ВАШ_КЛЮЧ_ОРГАНИЗАЦИИ
+            -Dsonar.organization=qualcommes909
             -Dsonar.projectKey=hexlet-code
             -Dsonar.sources=gendiff,main.py
             -Dsonar.tests=tests
