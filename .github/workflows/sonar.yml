@@ -51,5 +51,3 @@ jobs:
             -Dsonar.sources=gendiff,main.py
             -Dsonar.tests=tests
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.tests=tests
-            -Dsonar.python.coverage.reportPaths=coverage.xml
