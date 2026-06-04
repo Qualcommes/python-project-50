@@ -1,0 +1,5 @@
+timeout: 120
+heavy: amino
+verbose: false
+host: qualcommes.io
+hierarchy: tree
