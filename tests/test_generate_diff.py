@@ -54,6 +54,26 @@ def test_json_recursive_plain_diff():
         result = result.read()
     assert generate_diff(file1, file2, format_name="plain") == result
 
+
+def test_json_format_json_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result6.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file1.json')
+    file2 = os.path.join(test_dir, 'test_data', 'file2.json')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2, format_name="json") == result
+
+
+def test_json_format_recursive_json_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result7.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file4.json')
+    file2 = os.path.join(test_dir, 'test_data', 'file5.json')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2, format_name="json") == result
+
 # ================== YAML ============================================
 
 
@@ -104,4 +124,24 @@ def test_yaml_recursive_plain_diff():
     file2 = os.path.join(test_dir, 'test_data', 'file5.yaml')
     with open(result_file, encoding='utf-8') as result:
         result = result.read()
-    assert generate_diff(file1, file2, format_name="plain") == result
+    assert generate_diff(file1, file2, 'plain') == result
+
+
+def test_json_format_yaml_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result6.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file1.yml')
+    file2 = os.path.join(test_dir, 'test_data', 'file2.yml')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2, format_name="json") == result
+
+
+def test_json_format_recursive_yaml_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result7.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file4.yaml')
+    file2 = os.path.join(test_dir, 'test_data', 'file5.yaml')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2, format_name="json") == result

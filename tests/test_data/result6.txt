@@ -1,0 +1,20 @@
+[
+  {
+    "op": "remove",
+    "path": "/follow"
+  },
+  {
+    "op": "remove",
+    "path": "/proxy"
+  },
+  {
+    "op": "replace",
+    "path": "/timeout",
+    "value": 20
+  },
+  {
+    "op": "add",
+    "path": "/verbose",
+    "value": true
+  }
+]
