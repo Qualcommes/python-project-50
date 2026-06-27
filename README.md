@@ -18,3 +18,5 @@
 [![asciicast](https://asciinema.org/a/ZPjzMAGRPLYOtzx3.svg)](https://asciinema.org/a/ZPjzMAGRPLYOtzx3)
 ### Example of using a diff generator with recursive files (JSON)
 [![asciicast](https://asciinema.org/a/dJcDfD4pINswg49X.svg)](https://asciinema.org/a/dJcDfD4pINswg49X)
+### Example of using a diff generator with recursive files (JSON) in a plain output
+[![asciicast](https://asciinema.org/a/YfMbq9TWdKTEZRe1.svg)](https://asciinema.org/a/YfMbq9TWdKTEZRe1)

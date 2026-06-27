@@ -43,6 +43,8 @@ def build_diff(data1: dict, data2: dict) -> list:
 
 def generate_diff(file_path1: str, file_path2: str, 
                   format_name='stylish') -> str:
+    if format_name is None:
+        format_name = 'stylish'
     data1 = load_file(file_path1)
     data2 = load_file(file_path2)
     
