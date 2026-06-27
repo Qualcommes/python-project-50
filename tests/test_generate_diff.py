@@ -34,6 +34,16 @@ def test_json_alternate_generate_diff():
         result = result.read()
     assert generate_diff(file1, file2) == result
 
+'''
+def test_json_recursive_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result4.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file4.json')
+    file2 = os.path.join(test_dir, 'test_data', 'file5.json')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2) == result
+'''
 # ================== YAML ============================================
 
 

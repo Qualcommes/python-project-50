@@ -1,7 +1,8 @@
 from .parser import parser
+from .formatter import format
 
 
-def generate_diff(file_path1: str, file_path2: str) -> str:
+def generate_diff(file_path1: str, file_path2: str, format_name='stylish') -> str:
     parsed = parser(file_path1, file_path2)
     file1 = parsed[0]
     file2 = parsed[1]
