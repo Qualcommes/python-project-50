@@ -1,31 +1,53 @@
-from .parser import parser
 from .formatter import format
+from .parser import load_file
 
 
-def generate_diff(file_path1: str, file_path2: str, format_name='stylish') -> str:
-    parsed = parser(file_path1, file_path2)
-    file1 = parsed[0]
-    file2 = parsed[1]
-    set1 = set(file1)
-    set2 = set(file2)
-    difference = set1 - set2
-    intersection = set1 & set2
-    plus = set2 - set1
-    all_keys = sorted(set1 | set2)
-    result = '{\n'
-    for key in all_keys:
-        if key in difference:
-            result += '  - ' + key + ': ' + str(file1[key]).lower() + '\n'
-            continue
-        elif key in intersection:
-            if file1[key] == file2[key]:
-                result += '    ' + key + ': ' + str(file1[key]).lower() + '\n'
-            else:
-                result += '  - ' + key + ': ' + str(file1[key]).lower() + \
-                '\n  + ' + key + ': ' + str(file2[key]).lower() + '\n'
-            continue
-        elif key in plus:
-            result += '  + ' + key + ': ' + str(file2[key]).lower() + '\n'
-            continue
-    result += '}'
-    return result
+def build_diff(data1: dict, data2: dict) -> list:
+    keys = sorted(set(data1.keys()) | set(data2.keys()))
+    diff = []
+
+    for key in keys:
+        if key not in data1:
+            diff.append({
+                "key": key,
+                "type": "added",
+                "value": data2[key]
+            })
+        elif key not in data2:
+            diff.append({
+                "key": key,
+                "type": "removed",
+                "value": data1[key]
+            })
+        elif isinstance(data1[key], dict) and isinstance(data2[key], dict):
+            diff.append({
+                "key": key,
+                "type": "nested",
+                "children": build_diff(data1[key], data2[key])
+            })
+        elif data1[key] == data2[key]:
+            diff.append({
+                "key": key, 
+                "type": "unchanged", 
+                "value": data1[key]
+            })
+        else:
+            diff.append({
+                "key": key,
+                "type": "changed",
+                "old_value": data1[key],
+                "new_value": data2[key]
+            })
+    return diff
+
+
+def generate_diff(file_path1: str, file_path2: str, 
+                  format_name='stylish') -> str:
+    data1 = load_file(file_path1)
+    data2 = load_file(file_path2)
+    
+    diff_tree = build_diff(data1, data2)
+    return format(diff_tree, format_style=format_name)
+
+
+

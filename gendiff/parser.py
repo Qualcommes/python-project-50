@@ -16,9 +16,3 @@ def load_file(file_path: str):
             return json.load(file) or {}
     else:
         raise ValueError(f"Unsupported file format: {ext}")
-
-
-def parser(file_path1: str, file_path2: str):
-    file1 = load_file(file_path1)
-    file2 = load_file(file_path2)
-    return (file1, file2)

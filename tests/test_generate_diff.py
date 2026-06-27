@@ -1,6 +1,6 @@
 import os
 
-from gendiff.scripts.gendiff import generate_diff
+from gendiff import generate_diff
 
 # ================== JSON ===========================================
 
@@ -34,7 +34,7 @@ def test_json_alternate_generate_diff():
         result = result.read()
     assert generate_diff(file1, file2) == result
 
-'''
+
 def test_json_recursive_diff():
     test_dir = os.path.dirname(__file__)
     result_file = os.path.join(test_dir, 'test_data', 'result4.txt')
@@ -43,7 +43,7 @@ def test_json_recursive_diff():
     with open(result_file, encoding='utf-8') as result:
         result = result.read()
     assert generate_diff(file1, file2) == result
-'''
+
 # ================== YAML ============================================
 
 
@@ -72,6 +72,16 @@ def test_yaml_alternate_generate_diff():
     result_file = os.path.join(test_dir, 'test_data', 'result3.txt')
     file1 = os.path.join(test_dir, 'test_data', 'file1.yml')
     file2 = os.path.join(test_dir, 'test_data', 'file3.yml')
+    with open(result_file, encoding='utf-8') as result:
+        result = result.read()
+    assert generate_diff(file1, file2) == result
+
+
+def test_yaml_recursive_diff():
+    test_dir = os.path.dirname(__file__)
+    result_file = os.path.join(test_dir, 'test_data', 'result4.txt')
+    file1 = os.path.join(test_dir, 'test_data', 'file4.yaml')
+    file2 = os.path.join(test_dir, 'test_data', 'file5.yaml')
     with open(result_file, encoding='utf-8') as result:
         result = result.read()
     assert generate_diff(file1, file2) == result
