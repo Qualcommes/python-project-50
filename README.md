@@ -16,3 +16,5 @@
 [![asciicast](https://asciinema.org/a/yuA3UN3QMLw4Eirg.svg)](https://asciinema.org/a/yuA3UN3QMLw4Eirg)
 ### Example of using a diff generator with YAML files
 [![asciicast](https://asciinema.org/a/ZPjzMAGRPLYOtzx3.svg)](https://asciinema.org/a/ZPjzMAGRPLYOtzx3)
+### Example of using a diff generator with recursive files (JSON)
+[![asciicast](https://asciinema.org/a/dJcDfD4pINswg49X.svg)](https://asciinema.org/a/dJcDfD4pINswg49X)
