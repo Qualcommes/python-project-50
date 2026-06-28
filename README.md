@@ -1,5 +1,10 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Qualcommes/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Qualcommes/python-project-50/actions)
+### GitHub Actions Badges
+[![CI](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml/badge.svg)](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml)
+[![CI](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml/badge.svg)](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml)
+[![CI](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml/badge.svg)](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml)
+[![CI](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml/badge.svg)](https://github.com/Qualcommes/python-project-50/actions/workflows/full-check.yml)
 ### SonarQube Badges
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Qualcommes_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Qualcommes_python-project-50)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Qualcommes_python-project-50&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Qualcommes_python-project-50)
