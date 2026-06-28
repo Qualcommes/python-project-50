@@ -48,6 +48,6 @@ jobs:
             -Dsonar.sonarcloud=true
             -Dsonar.organization=qualcommes909
             -Dsonar.projectKey=Qualcommes_python-project-50
-            -Dsonar.sources=gendiff,main.py
+            -Dsonar.sources=gendiff
             -Dsonar.tests=tests
             -Dsonar.python.coverage.reportPaths=coverage.xml
