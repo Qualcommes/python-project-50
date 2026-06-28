@@ -10,7 +10,6 @@ def json_formatter(diff_tree, parent_path=""):
         property_path = f"{parent_path}/{key}"
 
         if type_ == "added":
-            # Передаем node["value"] как есть, без to_string()
             lines.append({
                 "op": "add", 
                 "path": property_path, 
